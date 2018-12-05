@@ -1,22 +1,12 @@
 import random
 
-CELLS = [(0, 0), (0, 1), (0, 2),
-         (1, 0), (1, 1), (1, 2),
-         (2, 0), (2, 1), (2, 2)]
-
-room_name = {"entryway":CELLS[7], "living room":CELLS[6], "kitchen": CELLS[8],
-             "west hallway":CELLS[3], "center hallway":CELLS[4], "east hallway":
-             CELLS[5], "bedroom":CELLS[0], "bathroom":CELLS[1], "master bedroom":CELLS[2]}
+CELLS = {(0, 0):"bedroom", (0, 1):"bathroom", (0, 2):"master bedroom",
+         (1, 0):"west hallway", (1, 1):"center hallway", (1, 2):"east hallway",
+         (2, 0):"living room", (2, 1):"entryway", (2, 2):"kitchen"}
 
 def get_locations():
-  monster = random.choice(CELLS)
-  door = random.choice(CELLS)
-  start = random.choice(CELLS)
-  
-  if monster == door or monster == start or door == start:
-    return get_locations()
-  
-  return monster, door, start
+  start = CELLS[(2, 1)]
+  return start
   
   
 def move_player(player, move):
@@ -91,10 +81,3 @@ while True:
   else:
     print("** Walls are hard, stop walking into them! **")
     continue
-    
-  if player == door:
-    print("You escaped!")
-    break
-  elif player == monster:
-    print("You were eaten by the grue!")
-    break
