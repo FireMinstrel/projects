@@ -5,11 +5,12 @@ CELLS = {(0, 0):"bedroom", (0, 1):"bathroom", (0, 2):"master bedroom",
          (2, 0):"living room", (2, 1):"entryway", (2, 2):"kitchen"}
 
 def get_locations():
-  start = CELLS[(2, 1)]
+  start = CELLS[(2,1)]
   return start
   
   
 def move_player(player, move):
+  x, y = player
   if move == 'LEFT':
     y -= 1
   elif move == 'RIGHT':
@@ -19,7 +20,8 @@ def move_player(player, move):
   elif move == 'DOWN':
     x += 1
 
-  return x, y
+  return (x, y)
+
 
 def get_moves(player):
   moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
@@ -53,13 +55,13 @@ def draw_map(player):
       else:
         print(tile.format('_|'))
 
-monster, door, player = get_locations()
+player = get_locations()
 print("Welcome to the dungeon!")
-
+player = (2, 1)
 while True:
   moves = get_moves(player)
   
-  print("You're currently in room {}".format(player))
+  print("You're currently in the {}".format(CELLS[player]))
   
   draw_map(player)
   
