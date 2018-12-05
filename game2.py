@@ -10,8 +10,7 @@ def get_locations():
   
   
 def move_player(player, move):
-  # player = (x, y)
-  x, y = player
+  player = (2, 1)
   
   if move == 'LEFT':
     y -= 1
@@ -23,7 +22,6 @@ def move_player(player, move):
     x += 1
 
   return x, y
-
 
 def get_moves(player):
   moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
