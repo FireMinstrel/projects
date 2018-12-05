@@ -10,8 +10,6 @@ def get_locations():
   
   
 def move_player(player, move):
-  player = (2, 1)
-  
   if move == 'LEFT':
     y -= 1
   elif move == 'RIGHT':
