@@ -48,30 +48,30 @@ def get_locations():
   
 def move_player(player, move):
   x, y = player
-  if move == 'LEFT':
+  if move == 'W':
     y -= 1
-  elif move == 'RIGHT':
+  elif move == 'E':
     y += 1
-  elif move == 'UP':
+  elif move == 'N':
     x -= 1
-  elif move == 'DOWN':
+  elif move == 'S':
     x += 1
 
   return (x, y)
 
 
 def get_moves(player):
-  moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
+  moves = ['W', 'E', 'N', 'S']
   # player = (x, y)
   
   if player[1] == 0:
-    moves.remove('LEFT')
+    moves.remove('W')
   if player[1] == 2:
-    moves.remove('RIGHT')
+    moves.remove('E')
   if player[0] == 0:
-    moves.remove('UP')
+    moves.remove('N')
   if player[0] == 2:
-    moves.remove('DOWN')
+    moves.remove('S')
 
   return moves
 
