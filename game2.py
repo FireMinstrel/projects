@@ -5,6 +5,19 @@ CELLS = {(0, 0):"bedroom", (0, 1):"bathroom", (0, 2):"master bedroom",
          (1, 0):"west hallway", (1, 1):"center hallway", (1, 2):"east hallway",
          (2, 0):"living room", (2, 1):"entryway", (2, 2):"kitchen"}
 
+class Baddie:
+         def __init__(self, name, condition):
+                  self.name()
+                  self.condition()
+         def attack(self, other):
+                  pass
+
+jock = Baddie()
+#Jock will punch you, knocking you out cold if you try to proceed further.  You have to give him the bottle of bourbon for him to let you proceed.  Appears randomly.  Once he passes out, he drops the key to the master bedroom.
+wino = Baddie()
+#Wino actually appears first, having lost an unopened bottle of bourbon.  You must scan the room and look under the couch.  Thus, the jock does appear randomly, but can't appear in the living room, which is where the wino always appears.
+
+
 def title_screen_selections():
     option = input("> ")
     if option.lower() == ("play"):
